@@ -22,7 +22,7 @@ class Content extends Component {
 
   renderContent = () => {
     if (this.state.click) {
-      return <NoteEditor currentNote={this.props.currentNote} handleUpdate={this.props.handleUpdate}/>;
+      return <NoteEditor currentNote={this.props.currentNote} handleUpdate={this.props.handleUpdate} handleDelete={this.props.handleDelete}/>;
     } else if (this.props.currentNote) {
       return <NoteViewer notes={this.props.notesToDisplay} currentNote={this.props.currentNote} toggleEdit={this.toggleEdit} />;
     } else {

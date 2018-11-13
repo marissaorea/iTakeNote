@@ -85,11 +85,28 @@ class App extends Component {
   }
   /////////////////////////////HANDLING UPDATES///////////////////////////
 
+
+  ////////////////////////////HANDLING DELETE////////////////////////////
+
+    handleDelete(noteId) {
+      fetch(`http://localhost:3000/api/v1/notes/${noteId}`, {
+        method: 'DELETE',
+        headers: {
+          "Accept": 'application/json',
+          "Content-Type": 'application/json'
+        }
+      })
+      .then((response) => {
+        console.log('item deleted')
+      })
+    }//end of delete function
+
+  ////////////////////////////HANDLING DELETE////////////////////////////
   render() {
     return (
       <div className="app">
         <Header />
-        <NoteContainer notes={this.state.notes} newNote={this.handleNewNote} handleUpdate={this.handleUpdate}/>
+        <NoteContainer notes={this.state.notes} newNote={this.handleNewNote} handleUpdate={this.handleUpdate} handleDelete={this.handleDelete}/>
       </div>
     );
   }

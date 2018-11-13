@@ -26,15 +26,17 @@ class NoteEditor extends Component {
     this.props.handleUpdate(id,title,body)
   }
 
+
+// <button type="button">Cancel</button>
+
   render() {
-   
-    return (
+     return (
       <form className="note-editor" onSubmit={this.handleFormSubmission} >
         <input type="text" name="title" value={this.state.title} onChange={this.inputNewTitle} />
         <textarea name="body" value={this.state.body} onChange={this.inputNewBody}/>
         <div className="button-row">
           <input className="button" type="submit" value="Save" />
-          <button type="button">Cancel</button>
+          <button type="button" onClick={this.props.handleDelete(this.props.currentNote.id)}>Delete</button>
         </div>
       </form>
     );

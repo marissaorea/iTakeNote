@@ -38,7 +38,7 @@ class NoteContainer extends Component {
         <Search filteredNotes={this.notesToDisplay()} handleSearch={this.handleSearch} />
         <div className='container'>
           <Sidebar notes={this.notesToDisplay()} handleClickDetail={this.handleClickDetail} newNote={this.props.newNote}/>
-          <Content currentNote={this.state.currentNote} notes={this.props.notes} handleUpdate={this.props.handleUpdate}/>
+          <Content currentNote={this.state.currentNote} notes={this.props.notes} handleUpdate={this.props.handleUpdate} handleDelete={this.props.handleDelete}/>
         </div>
       </Fragment>
     );
